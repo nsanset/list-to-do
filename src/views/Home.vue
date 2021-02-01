@@ -6,42 +6,32 @@
         {{ task }}
       </li>
     </ul>
-    <div class="form" v-show="!showForm">
-      <form action="#">
-        <input type="text" :value="inputValue">
-        <button @click="addTask">Add Task</button>
-      </form>
-      <h1> {{inputValue}} </h1>
-    </div>
-<!--     <taskForm v-show="!showForm"/> -->
-<!--     <addToDo :text="buttonText"/> -->
-    <button @click="showForm = !showForm">{{buttonText}}</button>
+    <taskForm v-for="showTaskForm"/>
+    <addToDo :text="buttonText"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import addToDo from '@/components/addToDo.vue'
-// import taskForm from '@/components/taskForm.vue'
+import addToDo from '@/components/addToDo.vue'
+import taskForm from '@/components/taskForm.vue'
+import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
-    // addToDo,
-    // taskForm
+    addToDo,
+    taskForm
   },
   data () {
     return {
-      buttonText: 'Add TODO List',
-      showForm: true,
-      inputValue: '',
-      taskList: ['task1', 'task2']
+      buttonText: 'Add TODO List'
     }
   },
-  methods: {
-    addTask () {
-      console.log(this.inputValue)
-      this.taskList.push(this.inputValue)
-    }
+  computed: {
+    ...mapState([
+      'showTaskForm',
+      'taskList'
+    ])
   }
 }
 </script>

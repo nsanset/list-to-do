@@ -1,5 +1,5 @@
 <template>
-  <button @click="showForm">
+  <button @click="addTodo">
     {{text}}
   </button>
 </template>
@@ -13,8 +13,11 @@ export default {
   },
   methods: {
     addTodo () {
-      const
-      this.$store.dispatch('showForm', task list)
+      const tasksList = {
+        _id: Math.random(1000),
+        title: 'New List'
+      }
+      this.$store.dispatch('addListTask', tasksList)
     }
   }
 }

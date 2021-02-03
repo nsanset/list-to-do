@@ -5,23 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    showTaskForm: false,
-    taskList: ['task1', 'task2']
+    taskLists: ['task1', 'task2', 'task3']
   },
   mutations: {
-    SHOW_FORM (state) {
-      state.showTaskForm = true
-    },
-    ADD_TASK (state, payload) {
-      state.taskList.push(payload)
+    ADD_LIST_TASK (state, payload) {
+      state.taskLists.push(payload)
     }
   },
   actions: {
-    showForm ({ commit }) {
-      commit('SHOW_FORM')
-    },
-    addTask ({ commit }, payload) {
-      commit('ADD_TASK', payload)
+    addListTask ({ commit }, payload) {
+      commit('ADD_LIST_TASK', payload)
     }
   },
   modules: {

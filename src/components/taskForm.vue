@@ -13,12 +13,6 @@ export default {
     return {
       buttonText: 'Add task'
     }
-  },
-  methods: {
-    addTask () {
-      console.log('ok')
-      this.taskList.push()
-    }
   }
 }
 </script>

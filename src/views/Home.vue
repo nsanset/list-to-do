@@ -1,12 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <ul class="list">
-      <li class="list-item" v-for="task in taskList" :key="task">
-        {{ task }}
-      </li>
-    </ul>
-    <taskForm v-for="showTaskForm"/>
+    <taskForm v-for="task in taskLists" :key="task"/> {{task}}
     <addToDo :text="buttonText"/>
   </div>
 </template>
@@ -29,8 +24,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'showTaskForm',
-      'taskList'
+      'taskLists'
     ])
   }
 }

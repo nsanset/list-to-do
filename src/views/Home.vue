@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <taskForm v-for="task in taskLists" :key="task"/> {{task}}
+    <TaskList v-for="taskList in taskLists" :key="taskList._id"/>
     <addToDo :text="buttonText"/>
   </div>
 </template>
@@ -9,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import addToDo from '@/components/addToDo.vue'
-import taskForm from '@/components/taskForm.vue'
+import TaskList from '@/components/TaskList.vue'
 import { mapState } from 'vuex'
 export default {
   name: 'Home',

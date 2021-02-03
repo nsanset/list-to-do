@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    taskLists: ['task1', 'task2', 'task3']
+    taskLists: []
   },
   mutations: {
     ADD_LIST_TASK (state, payload) {

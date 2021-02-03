@@ -15,7 +15,7 @@ export default {
   name: 'Home',
   components: {
     addToDo,
-    taskForm
+    TaskList
   },
   data () {
     return {

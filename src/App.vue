@@ -9,6 +9,10 @@
 </template>
 
 <style lang="scss">
+body {
+  background-image: url("./img/bacground.png");
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

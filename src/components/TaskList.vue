@@ -20,3 +20,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.TaskList {
+    width: 702px;
+    background: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #abafa2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 7px 8px -7px #000000;
+    margin-bottom: 40px;
+}
+</style>

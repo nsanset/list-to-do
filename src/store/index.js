@@ -8,13 +8,13 @@ export default new Vuex.Store({
     taskLists: ['task1']
   },
   mutations: {
-    ADD_LIST_TASK (state, payload) {
+    ADD_TO_DO_LISTS (state, payload) {
       state.taskLists.push(payload)
     }
   },
   actions: {
-    addListTask ({ commit }, payload) {
-      commit('ADD_LIST_TASK', payload)
+    addToDoLists ({ commit }, payload) {
+      commit('ADD_TO_DO_LISTS', payload)
     }
   },
   modules: {

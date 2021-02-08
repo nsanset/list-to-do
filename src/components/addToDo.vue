@@ -17,7 +17,7 @@ export default {
         _id: Math.random(1000),
         title: 'New List'
       }
-      this.$store.dispatch('addListTask', tasksList)
+      this.$store.dispatch('addToDoLists', tasksList)
     }
   }
 }

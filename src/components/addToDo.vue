@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'addToDo',
   props: {
@@ -17,6 +16,7 @@ export default {
         _id: Math.random(1000),
         title: 'New List'
       }
+      console.log(tasksList)
       this.$store.dispatch('addToDoLists', tasksList)
     }
   }

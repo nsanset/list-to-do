@@ -85,10 +85,10 @@ ul li {
 h1 {
   position: relative;
   top: 13px;
-  margin: 0px;
-  padding: 0px 0px 0px 10px;
-  color: #fff;
-  font-size: 20px;
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+    color: #fff;
+    font-size: 20px;
 }
 .taskHeader--buttons {
   position: absolute;

@@ -23,7 +23,8 @@ export default {
   },
   computed: {
     ...mapState([
-      'taskLists'
+      'taskLists',
+      'todos'
     ])
   }
 }

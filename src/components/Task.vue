@@ -1,6 +1,6 @@
 <template>
     <ul class="tasks-list">
-      <li v-for="todo in todos" :key="todo">
+      <li v-for="(todo, index) in todos" :key="index">
         <div class="task">
           <div class="task--checkbox">
             <input type="checkbox">
@@ -24,8 +24,8 @@
             <div class="task--buttons--pencil" @click="todo.edit = true;">
               <font-awesome-icon icon="pencil-alt"/>
             </div>
-            <div class="task--buttons--trash">
-                <font-awesome-icon icon="trash-alt"/>
+            <div class="task--buttons--trash" @click="removeTask(index)">
+                  <font-awesome-icon icon="trash-alt"/>
             </div>
           </div>
         </div>
@@ -34,20 +34,22 @@
 </template>
 
 <script>
-
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      todos: [
-        { title: 'task #1', edit: false },
-        { title: 'task #2', edit: false },
-        { title: 'task #3', edit: false }
-      ]
     }
   },
   methods: {
     editTodo: function (todo) {
       this.editedTodo = todo
+    },
+    presskey (event) {
+      console.log(event)
+    },
+    removeTask (index) {
+      console.log(index)
+      this.$store.dispatch('removeTodos')
     }
   },
   directives: {
@@ -56,6 +58,12 @@ export default {
         el.focus()
       }
     }
+  },
+  computed: {
+    ...mapState([
+      'taskLists',
+      'todos'
+    ])
   }
 }
 </script>
@@ -151,5 +159,4 @@ export default {
   visibility: visible;
   opacity: 1;
 }
-
 </style>

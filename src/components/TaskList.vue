@@ -10,11 +10,18 @@
 import TaskHeader from '@/components/TaskHeader.vue'
 import taskForm from '@/components/taskForm.vue'
 import Task from '@/components/Task.vue'
+import { mapState } from 'vuex'
 export default {
   components: {
     TaskHeader,
     taskForm,
     Task
+  },
+  computed: {
+    ...mapState([
+      'taskLists',
+      'todos'
+    ])
   }
 }
 </script>

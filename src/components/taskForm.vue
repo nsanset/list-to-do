@@ -1,10 +1,10 @@
 <template>
     <div class="form">
-        <form action="#">
+        <form action="#" @submit.prevent>
             <div class="form--iconPlus">
               <font-awesome-icon icon="plus"/>
             </div>
-            <input type="text">
+            <input type="text" :value="inputValue" v-on:input="inputTask">
             <button @click="addTask">{{buttonText}}</button>
         </form>
     </div>
@@ -14,7 +14,23 @@
 export default {
   data () {
     return {
-      buttonText: 'Add task'
+      buttonText: 'Add task',
+      inputValue: ''
+    }
+  },
+  methods: {
+    inputTask (e) {
+      this.inputValue = e.target.value
+    },
+    addTask () {
+      const todos = {
+        title: this.inputValue, edit: false
+      }
+      if (this.inputValue !== '') {
+        console.log(todos)
+        this.$store.dispatch('addTasks', todos)
+        this.inputValue = ''
+      }
     }
   }
 }
